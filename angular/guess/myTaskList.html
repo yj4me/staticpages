@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>任务列表</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/myTaskList.css">
+</head>
+<body>
+	<div class="m_layout" ng-app="myTask">
+		<div class="container-fluid" ng-controller="taskController">
+			<h1 class="page-header text-center">我的任务列表</h1>
+			<!-- bootstrap中的表单写法 -->
+			<form ng-submit="addTask()">
+
+				<div class="form-group">
+					<label for="newTask">在这里写下你的任务计划吧</label>
+					<div class="input-group">
+				        <input type="text" class="form-control" id="newTask" placeholder="What needs to be done?  Let's start with an Enter !" autofocus="autofocus" ng-model="taskText">
+				        <span class="input-group-btn">
+				        	<button class="btn btn-default" type="submit">Submit</button>
+				        </span>
+				    </div>
+				</div>
+				<div class="checkbox">
+				    <label>
+			      	<input type="checkbox" ng-click="changeStatus()" ng-model="chk"> 标记所有为以解决
+				    </label>
+				</div>
+			</form>
+			<br>
+			<div class="btn-group btn-group-justified" role="group" aria-label="...">
+				  <div class="btn-group" role="group">
+				    <button type="button" class="btn btn-default active"><a href="#/all">所有事项</a></button>
+				  </div>
+				  <div class="btn-group" role="group">
+				    <button type="button" class="btn btn-danger"><a href="#/todo">待办</a></button>
+				  </div>
+				  <div class="btn-group" role="group">
+				    <button type="button" class="btn btn-success"><a href="#/done">已完成</a></button>
+				  </div>
+			</div>
+			<div ng-view></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script src="https://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
+	<script type="text/javascript" src="js/myTaskList.js"></script>
+
+</body>
+</html>

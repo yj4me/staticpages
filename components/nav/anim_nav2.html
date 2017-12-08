@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手风琴导航2</title>
+	<style>
+		*{padding: 0;margin: 0;}
+		/*text-align:center,可以使里面的ul*/
+		.con{width: 100%;position: relative;margin: 40px auto;text-align: center;}
+		/*清除浮动*/
+		.clearfix::before,.clearfix::after{
+			content: "";
+			height: 0;
+			line-height: 0;
+			display: block;
+			visibility: hidden;
+			clear: both;
+		}
+		/*使ul居中*/
+		ul{list-style: none;display: inline-block;}
+		/*未设置宽度，让子元素动态填充*/
+		ul.first li{float: left;
+			position: relative;
+		}
+		ul.first li .main_nav{
+			position: relative;
+			width:138px;height:50px;
+			margin: 0 5px;
+			background: url(images/nav_bg.png) top left no-repeat;
+			background-size: 80%;
+		}
+		ul.first li .main_nav span:first-child{position:absolute;top: 0;left:0;color:#c8c4b7;font-size:20px;}
+		ul.first li .main_nav span:nth-child(2){position:absolute; top:0;left:32px;color:#8a816c;font-size: 12px;}
+		ul.first li .main_nav span:last-child{position:absolute; bottom:5px;left:42px;color:#433c2d;font-size:20px;transition: all 1s;
+		}
+		ul.first li.firstLi:hover {
+			animation: shoufengqin 1s;
+			/*停留在动画完成时的状态*/
+			animation-fill-mode: forwards;
+			
+		}
+		@keyframes shoufengqin{
+			0%{width:138px;}
+			25%{width:200px;}
+			75%{width: 142px;}
+			100%{width: 150px;}
+		}
+		ul.first li.firstLi:hover  .main_nav span:last-child{color:#ca0813;font-size: 24px;}
+
+		ul.first li ul.second_nav {position: absolute;width:800px;
+			top:50px;left:40px;
+			/*添加动画*/
+		/*	margin-left: 10px;*/
+			display: none;
+			/*transition:all 1s ease 4s;*/
+		}
+		ul.first li:hover ul.second_nav {display: block;/*margin-left: 0;*/}
+		ul.first li ul.second_nav li{
+			float:left;
+			width:100px;
+			height:10px;
+			line-height: 10px;
+			margin:10px 0 0;
+			border-right: 1px solid #ccc;
+		}
+		ul.first li ul.second_nav li:last-child{border-right: 0;}
+		ul.first li ul.second_nav li a{
+			display: block;
+			width:80px;height:14px;
+			line-height:14px;
+			color: #51493a;text-decoration: none;
+			text-align: center;
+			position: absolute;
+			top: -4px;left: 10px;
+			padding: 2px 0;
+			background-position:0 0;
+			transition:all 1s;
+			font-size: 12px;}
+		ul.first li ul.second_nav li a:hover{
+			color: #fff;
+			background-color: #776d5a;
+			background-position: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="con">
+		<ul class="clearfix first">
+			<li class="firstLi">
+				<div class="main_nav">
+					<span>01</span>
+					<span>AUOUT US</span>
+					<span>关于我们</span>
+				</div>
+				
+				<ul class="second_nav clearfix">
+					<li><a href="">公司简介</a></li>
+					<li><a href="">企业寄语</a></li>
+					<li><a href="">企业文化</a></li>
+					<li><a href="">荣誉资质</a></li>
+					<li><a href="">组织结构</a></li>
+					<li><a href="">服务范围</a></li>
+					<li><a href="">发展历程</a></li>
+				</ul>
+			</li>
+			<li class="firstLi">
+				<div class="main_nav">
+					<span>02</span>
+					<span>NEWS</span>
+					<span>新闻中心</span>
+				</div>
+				<ul class="second_nav clearfix">
+					<li><a href="">公司新闻</a></li>
+					<li><a href="">技术文章</a></li>
+					<li><a href="">活动荟萃</a></li>
+					<li><a href="">行业资讯</a></li>
+				</ul>
+				
+			</li>
+			<li class="firstLi">
+				<div class="main_nav">
+					<span>03</span>
+					<span>DESIGN</span>
+					<span>设计精选</span>
+				</div>
+				<ul class="second_nav clearfix">
+					<li><a href="">地产景观设计</a></li>
+					<li><a href="">市政景观设计</a></li>
+					<li><a href="">风景景观设计</a></li>
+					<li><a href="">办公环境设计</a></li>
+				</ul>
+				
+			</li>
+			<li class="firstLi">
+				<div class="main_nav">
+					<span>04</span>
+					<span>PROJECTS</span>
+					<span>工程案例</span>
+				</div>
+				<ul class="second_nav clearfix">
+					<li><a href="">设计实景</a></li>
+					<li><a href="">施工项目</a></li>
+				</ul>
+				
+			</li>
+			<li class="firstLi">
+				<div class="main_nav">
+					<span>05</span>
+					<span>SERVICES</span>
+					<span>服务中心</span>
+				</div>
+				<ul class="second_nav clearfix">
+					<li><a href="">服务流程</a></li>
+					<li><a href="">售后服务</a></li>
+					<li><a href="">公司规程</a></li>
+					<li><a href="">合作伙伴</a></li>
+				</ul>
+				
+			</li>
+			<li class="firstLi">
+				<div class="main_nav">
+					<span>06</span>
+					<span>HUMAN</span>
+					<span>人力资源</span>
+				</div>
+				<ul class="second_nav clearfix">
+					<li><a href="">人才理念</a></li>
+					<li><a href="">招聘职位</a></li>
+				</ul>
+				
+			</li>
+			<li class="firstLi">
+				<div class="main_nav">
+					<span>07</span>
+					<span>CONTACT US</span>
+					<span>联系我们</span>
+				</div>
+				<ul class="second_nav clearfix">
+					<li><a href="">联系我们</a></li>
+					<li><a href="">咨询留言</a></li>
+				</ul>
+				
+			</li>
+		</ul>	
+	</div>
+</body>
+</html>

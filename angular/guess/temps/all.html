@@ -1,0 +1,26 @@
+<div>
+	<ul class="taskList">
+		<li ng-repeat="task in taskList">
+			<div class="checkbox">
+			   <!--  <label>
+			      	<input type="checkbox" ng-model="task.done"> 
+			      	<span>{{task.text}}</span>
+			    </label> -->
+			    <span class="badge">{{task.id}}</span>
+			     &nbsp;&nbsp;&nbsp;
+			    <span>{{task.text}}</span>
+			    &nbsp;&nbsp;&nbsp;
+			    <span >{{task.done}}</span>
+			    &nbsp;&nbsp;&nbsp;
+			    <span>{{task.time}}</span>
+			    <button type="button" class="close" ng-click="removeTask(task)" data-dismiss="alert">×</button>
+			</div>
+		</li>
+	</ul>
+	<div>未完成：<span class="badge">{{countTodo}}</span>
+			&nbsp;&nbsp;&nbsp;
+			已完成：<span class="badge">{{countDone}}</span>
+			&nbsp;&nbsp;&nbsp;
+			总数：<span class="badge">{{taskList.length}}</span>
+	</div>
+</div>

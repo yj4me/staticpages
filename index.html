@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>梁月季的个人站点</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+	<!--固定到顶部，颜色取反向颜色，黑色-->
+  <div class="top-banner navbar-inverse">
+      <div class="container">
+          <a class="brand brand-text" href="index.html" title="梁月季的个人站点" rel="home">
+            <h2><span>梁月季的个人站点 </span>                           
+              <small>记录我的代码点滴</small>
+            </h2>
+          </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- start navigation -->
+    <nav class="main-navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="collapse navbar-collapse" id="main-menu">
+                        <ul class="menu">
+                            <li class="nav-current" role="presentation"><a href="index.html">小项目</a></li>
+                            <li  role="presentation"><a href="animation/anim.html">CSS3动画</a></li>
+                            <li  role="presentation"><a href="components/components.html">组件</a></li>
+                            <li  role="presentation"><a href="angular/angular.html">AngularJS</a></li>
+                        </ul>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- end navigation -->
+
+     <!-- start site's main content area -->
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <!-- 主要内容 -->
+                <main class="col-md-8 main-content" id="home">
+                    <article class="item">
+                       <h3>梁月季的Web简历</h3>
+                       <p>这个小项目是自己制作的一个网页版简历，通过简要的介绍能够让别人对我有一个初步的了解。制作过程中使用到了Bootstrap来搭建页面框架，使用了jQuery和jQuery Mousewheel等js插件。实现效果的过程中了解到了实现相同效果的其它插件fullPage.js。总之，实践就是一个不断查漏补缺，不断学习的过程。</p>
+                        <div class="check">
+                            <a href="personal-web/index.html" target="_blank" class="btn">查看效果</a>
+                        </div>
+                        <hr>
+                        <div class="content tag-cloud">
+                          <a href="javascript:;">静态页面</a>
+                          <a href="javascript:;">响应式布局</a>
+                          <a href="javascript:;">jQuery</a>
+                          <a href="javascript:;">Bootstrap</a>
+                          <a href="javascript:;">CSS3动画</a>
+                        </div>
+                 
+
+                    </article>
+                    <article class="item">
+                       <h3>模拟触摸滑屏效果</h3>
+                       <p>这个小项目本来是要实现触摸滑动屏幕展示动画的效果，因为电脑端不支持滑屏事件，所以修改了监听的事件为鼠标滚轮事件。滑屏事件在移动端测试时可实现。这个也主要是CSS3动画。</p>
+                        <div class="check">
+                            <a href="h5/index.html" class="btn" target="_blank">查看效果</a>
+                        </div>
+                        <hr>
+                         <div class="content tag-cloud">
+                          <a href="javascript:;">静态页面</a>
+                          <a href="javascript:;">jQuery</a>
+                          <a href="javascript:;">CSS3动画</a>
+                        </div>
+                    </article>
+                </main>
+
+                <!-- 侧边栏 -->
+                <aside class="col-md-4 sidebar">
+                  <!-- start tag cloud widget -->
+                  <div class="widget">
+                    <h4 class="title">联系方式</h4>
+                    <div class="content community">
+                      <p>邮箱、电话</p>
+                      <p><a href="javascript:;" title="邮箱地址" target="_blank">
+                        <i class="glyphicon glyphicon-envelope"></i> &nbsp;&nbsp;yueji_me@163.com</a>
+                      </p>
+                      <p><a href="javascript:;" title="电话号码" target="_blank">
+                        <i class="glyphicon glyphicon-phone"></i> &nbsp;&nbsp;136 9146 6131</a>
+                      </p>
+                    </div>
+                  </div>
+                  <!-- end tag cloud widget --> 
+                  <!-- start tag cloud widget -->
+                    <div class="widget">
+                      <h4 class="title">标签云</h4>
+                      <div class="content tag-cloud">
+                        <a href="">程序员</a>
+                        <a href="">前端</a>
+                        <a href="">jQuery</a>
+                        <a href="">Bootstrap</a>
+                        <a href="">响应式布局</a>
+                        <a href="">Node.js</a>
+                        <a href="">AngularJS</a>
+                        <a href="">导航条</a>
+                        <a href="">轮播图</a>
+                        <a href="">自定义动画</a>
+                        <a href="">静态页面</a>
+                        <a href="http://www.lofter.com/blog/yuejihuakai888?act=dashboardclick_20130514_04" target="_blank">业余绘画</a>
+                        <a href="">...</a>
+                      </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+
+
+
+  
+ 
+    <script src="js/jquery-1.12.4.min.js"></script>
+    
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

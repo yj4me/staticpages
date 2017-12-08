@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>猜数字游戏</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body ng-app="myApp">
+	<div class="m_layout">
+		<div class="container-fluid" ng-controller="GuessNumController">
+			<h2 class="page-header text-center">猜数字！</h2>
+			<p class="lead text-info">请随机猜一个1到1000之间的整数</p>
+			<!-- 这里要有输入验证，保证输入的是有效数字 -->
+			<form name="myForm" novalidate>
+			<!-- 通过属性调用指令-->
+				请输入您猜的数字：<input type="number" ng-model="user_input" name="myInput"  min="1" max="1000" integer>
+				<!-- 无填写纪录 -->
+				<span ng-show="myForm.myInput.$pristine" class="text-danger">请输入</span>
+				
+				<span ng-show="myForm.myInput.$error.integer" class="text-danger"> 不是整数</span>
+				<span ng-show="myForm.myInput.$error.min || myForm.myInput.$error.max" class="text-danger"> 超出范围</span>
+
+			</form>
+			<!-- 验证输入，重新游戏 -->
+			<div class="row" style="padding-bottom: 10px;padding-top: 10px;">
+				<div class="col-xs-6">
+					<button  class="btn btn-primary btn-block" 
+					ng-disabled="myForm.myInput.$dirty && myForm.user.$invalid" ng-click="verifyGuess()"
+					>确定</button> 
+				</div>
+				<div class="col-xs-6">
+					<button class="btn btn-warning  btn-block" ng-click="initializeGame()">重来</button> 
+				</div>
+			</div>
+			
+ 			<!-- 验证结果显示区域 -->
+ 			<p ng-show="deviation < 0" class="alert alert-warning">您猜的数字太大了！</p>
+ 			<p ng-show="deviation > 0" class="alert alert-warning">啊哦，这次有点小了，继续加油！</p>
+ 			<p ng-show="deviation === 0" class="alert alert-warning">bingo,您真是太厉害了，这都被您猜中了！</p>
+ 			<p class="tetxt-info">您总共猜了：<span style="color:red">{{ numOfTries}}</span>次</p>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

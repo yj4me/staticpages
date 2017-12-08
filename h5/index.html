@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <!--标准的视口设置-->
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <title>优雅的手机滚动屏</title>
+    <link rel="stylesheet" type="text/css" href="lib/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script type="text/javascript" src="lib/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.easie.js"></script>
+    <!-- 元素入场的时候才会执行动画 -->
+    <script type="text/javascript" src="lib/wow.min.js"></script>
+    <script type="text/javascript" src="lib/myslide.js"></script>
+        
+</head>
+<body>
+    <div>
+        <div class="left">
+        	<div class="content">
+                
+                <span id="door-left"></span><!--左门   -->
+                <span id="door-right"></span><!--右门  -->
+               
+                <div class="pageContent">
+                    
+                    <section class="page page1 current">
+                        <div class="bg"></div>
+                        <img src="images/1_san1.png">
+                        <img src="images/1_san.png">
+                    </section>
+                    <section class="page page2">
+                        <div class="bg"></div>
+                        <img src="images/1_bird.png" class="bird">
+                        <div class="text">
+                        接天莲叶无穷碧，映日荷花别样红。
+                        —— 杨万里《晓出净慈寺送林子方》
+                         
+                        </div>
+                      
+                    </section>
+                    
+                    <section class="page page3">
+                        <div class="bg"></div>
+                        <img src="images/mei_1.png">
+                        <img src="images/mei_2.png">
+                        <img src="images/mei_3.png">
+                      
+                    </section>
+                    <section class="page page4">
+                        <div class="bg"></div>
+                   
+                    </section>
+                    <section class="page page5">
+                        <div class="bg"></div>
+                        <img src="images/05.png">
+                    </section>
+                    <section class="page page6">
+                        <div class="bg"></div>
+                    </section>
+                    
+                </div>
+        	</div>
+        </div>
+
+        <div class="right"><img src="images/a.png" style="width: 400px;height: 400px;"></div>
+    </div>
+    <script type="text/javascript">
+        new WOW().init();
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,18 @@
+<ul class="taskList">
+	<li ng-repeat="task in taskList | filter:{done:'已完成'}">
+		<div class="checkbox">
+		   <!--  <label>
+		      	<input type="checkbox" ng-model="task.done"> 
+		      	<span>{{task.text}}</span>
+		    </label> -->
+		    <span class="badge">{{task.id}}</span>
+		     &nbsp;&nbsp;&nbsp;
+		    <span>{{task.text}}</span>
+		    &nbsp;&nbsp;&nbsp;
+		    <span >{{task.done}}</span>
+		    &nbsp;&nbsp;&nbsp;
+		    <span>{{task.time}}</span>
+		    <button type="button" class="close" ng-click="removeTask(task)" data-dismiss="alert">×</button>
+		</div>
+	</li>
+</ul>

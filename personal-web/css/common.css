@@ -1,0 +1,24 @@
+/*css初始化*/
+html, body, ul, li, p, h1, h2, form,img {margin: 0;padding: 0}
+img{border:none;}
+ul{list-style: none;}
+input { padding-top: 0;padding-bottom: 0；border:none;}
+a{text-decoration:none;}
+body{font:normal normal 12px 'Microsoft YaHei', 'Arial', '\u5b8b\u4f53';color:#4c4c4c;background-color:#ffffff;}
+.fl{float: left;}
+.fr{float: right;}
+.tc{text-align: center;}
+.clearfix:after{content: "";height: 0;line-height: 0;display: block;visibility: hidden;clear: both;}
+.clearfix{zoom:1;}
+
+.p_lr_40p{padding-left: 40px;padding-right: 40px; }
+
+.m_t_5p{margin-top:5px;}
+.m_t_10p{margin-top:10px;}
+.m_t_20p{margin-top:20px;}
+.m_t_40p{margin-top:40px;}
+
+.l_t{left:20px;top: 60px;}
+.r_t{right:20px;top:60px;}
+.l_b{left:20px;bottom: 0;}
+.r_b{right:20px;bottom: 0;}

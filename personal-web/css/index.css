@@ -1,0 +1,593 @@
+body{width: 100%;height: 100%;}
+/*清除bootstrap自带的边框*/
+.loading_page{width: 100%;height: 100%;overflow: hidden;padding: 0;position: absolute;z-index: 9;}
+.loading_page img{width: 100%;height: 100%;}
+.main_page{width: 100%;height: 100%;overflow: hidden;padding: 0;position: absolute;min-width: 320px;}
+
+/*公用header样式*/
+.nav_css{
+	position: absolute;
+	z-index:8;
+	width: 100%;
+	background-color: #000;opacity: 0.6;
+	list-style: none;
+	border-radius: 0;
+}
+/*这个padding左右30，屏幕变窄的时候会掉下来*/
+.nav li a{padding: 15px 25px;color:#edecb9;font-size: 16px;}
+.nav li a:hover{color: #615f04;background-color: transparent;}
+.nav li.active{border-bottom: 4px solid #962232;}
+.nav li.active a{background-color: transparent;}
+/*不能写溢出隐藏，否则后面的都会看不到了*/
+.gungun{width: 100%;height: 100%;position: absolute;}
+
+/*子决父相。一定要给父亲相对position*/
+.part{width: 100%;height: 100%;background-size: cover;overflow: hidden;position: relative;}
+
+.part1{background:url(../images/page1.jpg)}
+.part2{background:url(../images/bg2.jpg);}
+.part3{background:url(../images//bg3.jpg);}
+.part4{background:url(../images/bg4.jpg);}
+.part5{background:url(../images/bg5.jpg);}
+
+/*要先让元素偏移出去，拥有current属性时再回归原位，就会有入场动画的效果*/
+/*1.2倍的效果，添加current属性后，scale0.8即可*/
+
+.part1 article .mask{
+	position: absolute;
+	background:-webkit-linear-gradient(0deg,rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0));  
+    -webkit-transform:skewx(-25deg);  
+    -webkit-transition:all 0.5s;  
+    width:100px;  
+    height:260px;  
+    position:absolute; 
+    left:-100px;  
+    top:0px;
+}
+.part1 article:hover .mask{
+	top: 40px;
+	left:960px;
+}
+/*宽度是个固定值的时候响应式的时候有问题*/
+.part1 article{
+	overflow: hidden; 
+	position: relative;
+	width:80%;
+	margin: 168px auto;
+	padding:42px;
+	border:4px solid #fff;
+	box-shadow: 4px 4px 4px #333;
+	transition: all 1s ease 0s;
+}
+.part1.current article{
+	transform: scale(0.8,0.8);
+}
+/*屏幕宽度796的时候一行显示不完*/
+.part1 article h2{
+	font-size: 30px;
+	letter-spacing: 10px;
+	transition: all 0.8s;
+	transition-delay:0.6s;
+}
+.part1.current article h2{
+	letter-spacing: 4px;
+}
+.part1 article h3{
+	font-size: 20px;
+	font-weight: lighter;
+	letter-spacing:24px;
+	transition: all 0.8s;
+	transition-delay: 0.6s;
+}
+.part1.current article h3{
+	letter-spacing:0px;
+}
+.part1.current article h3 strong{
+	color: #b76c74;font-size: 30px;
+}
+
+/*公用的topbar*/
+.top_bar{
+	position: relative;
+	padding-top: 20px;
+}
+.top_bar h2{padding-bottom: 20px;color: #962232;}
+.part5 .top_bar h2{padding-bottom: 20px;color: #fff;}
+/*制作小三角*/
+.top_bar span{
+	position: absolute;
+	width: 0;height: 0;
+	border-width:16px;
+	border-style:dashed dashed solid  dashed ;
+	border-color: transparent transparent  #fff transparent;
+	bottom:0;
+	left:50%;
+	margin-left: -16px;
+}
+/*不指定宽度默认屏幕宽度*/
+.part2 .center_bg{
+	float: left;
+	position: relative;
+	left:50%;
+	top: 60px;
+	margin-left: -150px;
+	transition: all 2s ease 0s;
+}
+
+.part2.current .center_bg{
+	transform: scale(0.8,0.8);
+}
+.part2 .center_bg .center_star{
+	margin-top: 25px;
+	/*添加动画*/
+	/*匀速 永久 反向*/
+	animation: round 4s ease infinite alternate;
+    transition: all 1s;
+}
+@keyframes round {
+    from {
+        transform: rotate(0deg) scale(1.4,1.4);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1.0,1.0);
+    }
+}
+.part2.current .center_bg .center_star{
+	transform:rotate(360deg) scale(1.2,1.2);
+}
+.part2.current .center_bg .center_star:hover{
+	animation: round 8s ease infinite;
+	transition: all 4s;
+}
+
+.part2 .center_bg .circle_small{
+	position: absolute;
+	top: -10px;
+	left: -70px;
+}
+.part2 .center_bg .circle_big{
+	position: absolute;
+	top: -38px;
+	left: -38px;
+	background: url(../images/skill_bg.png) no-repeat center;
+	animation: music 3s linear infinite;
+	transition: all 1.4s;
+}
+
+/*文本的位置要根据这个圆进行定位*/
+.part2 .center_bg .skill_ul{
+	width: 370px;
+    height: 370px;
+    position: absolute;
+    top: 20px;
+    left:-30px;
+}
+.part2 .center_bg .skill_ul li{
+	position: absolute;
+    font-size: 30px;
+    color: #ccc;
+    transition: all 1s;
+    cursor: pointer;
+}
+/*添加动画效果*/
+.part2 .skill_ul li:hover{
+	animation-name: dou;
+    animation-duration: 0.6s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+@keyframes dou {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(10px, 5px) rotate(10deg);
+    }
+
+    66% {
+        transform: translate(-10px, -5px) rotate(-10deg);
+    }
+
+    100% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+.part2 .skill_ul li:nth-of-type(1){
+	left: 60px;
+    top: 180px;
+    font-size: 50px;
+}
+.part2 .skill_ul li:nth-of-type(2){
+	left:20px;
+    top:100px;
+}
+.part2 .skill_ul li:nth-of-type(3){
+	left: 120px;
+    top: 10px;
+    font-size: 40px;
+}
+.part2 .skill_ul li:nth-of-type(4){
+	left: 280px;
+    top: 100px;
+    font-size: 30px;
+}
+.part2 .skill_ul li:nth-of-type(5){
+	left:60px;
+    top: 300px;
+    font-size: 24px;
+}
+.part2 .skill_ul li:nth-of-type(6){
+	left: 270px;
+    top: 260px;
+}
+
+
+
+.part2 .items{position:relative;width: 20%;height:520px;}
+
+.part2 .items .item{
+	position: absolute;
+	width:160px;
+}
+.part2 .r_con{position: absolute;top: 140px;right:5%;}
+
+/*需要动画效果*/
+.part2 .items .item a{
+	display: inline-block;
+	width:160px;
+	height:160px;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: #cbc9c9;
+}
+.part2 .items .item a::before{
+	content: "";
+    width: 182px;
+    height: 182px;
+    background: url(../images/red_circle.png);
+    display: inline-block;
+    position: absolute;
+    margin-left: -11px;
+    margin-top: -11px;
+    transition: 1s;
+    opacity: 0;
+    transition:1s;
+}
+/*要执行的动画*/
+.part2 .items .item a:hover{
+	background-color:#962232; 
+}
+
+.part2 .items .item a:hover::before{
+	opacity: 1;
+}
+
+.part2 .items .item1 a span{
+	display:inline-block;
+	width:100%;
+	height:100%;
+	background:url(../images/sv01.png) no-repeat center center;
+	background-size: 60%;
+	transition: 1s;
+}
+/*动画*/
+.part2 .items .item a:hover span{
+	transform: rotate(360deg);
+}
+.part2 .items .item1 a:hover span{
+	display: inline-block;
+	width:100%;
+	height:100%;
+	background:url(../images/sv01c.png) no-repeat center center;
+	background-size: 60%;
+}
+.part2 .items .item2 a span{
+	display: inline-block;
+	width:100%;
+	height:100%;
+	background:url(../images/sv02.png) no-repeat center center;
+	background-size: 60%;
+	transition: 1s;
+}
+.part2 .items .item2 a:hover span{
+	display: inline-block;
+	width:100%;
+	height:100%;
+	background:url(../images/sv02c.png) no-repeat center center;
+	background-size: 60%;
+}
+.part2 .items .item3 a span{
+	display: inline-block;
+	width:100%;
+	height:100%;
+	background:url(../images/sv03.png) no-repeat center center;
+	background-size: 60%;
+	transition: 1s;
+}
+.part2 .items .item3 a:hover span{
+	display: inline-block;
+	width:100%;
+	height:100%;
+	background:url(../images/sv03c.png) no-repeat center center;
+	background-size: 60%;
+}
+.part2 .items .item4 a span{
+	display: inline-block;
+	width:100%;
+	height:100%;
+	background:url(../images/sv04.png) no-repeat center center;
+	background-size: 60%;
+	transition: 1s;
+}
+.part2 .items .item4 a:hover span{
+	display: inline-block;
+	width:100%;
+	height:100%;
+	background:url(../images/sv04c.png) no-repeat center center;
+	background-size: 60%;
+}
+.part2 .items .item p{color: #fff;text-align: center;}
+.part2 .items .item p:nth-of-type(1){font-size: 16px;letter-spacing: 2px;}
+
+/*作品页面*/
+.part3 .worksul {
+    width:100%;
+    height: 50px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #ccc;
+}
+
+.part3 .worksul li {
+    float: left;
+    width: 25%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background: rgba(56, 56, 56, 0.6);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.part3 .worksul .current {
+    background: rgba(56, 56, 56, 0.3);
+    color: #b82336;
+    border-bottom: 4px solid #b82336;
+    height: 46px;
+}
+
+.part3 .allworks .pare{position: relative;}
+.part3 .allworks .item{background-color: #292929;padding:5px;position: absolute;}
+.part3 .allworks .item .caption {color: #fff;}
+.part3 .allworks .item .caption h3.page-header{
+	margin:20px 0 20px;
+}
+.part3 .b_btn{position:absolute;bottom: 10px;left:50%;margin-left:-61px;}
+/*.part3 .b_btn button{position: absolute;bottom: 10px;}*/
+/*添加入场动画*/
+.part3 .item1{left: -400px;transition: left 4s ease 0s;}
+.part3.current  .item1{left:10px;}
+.part3 .item2{left: -800px;transition: left 2s ease 0s;}
+.part3.current  .item2{left:10px;}
+
+.part3 .item4{right: -400px;transition: right 4s ease 0s;}
+.part3.current  .item4{right:0;left: 10px;}
+.part3 .item3{right: -800px;transition: right 2s ease 0s;}
+.part3.current  .item3{right:0;left: 10px;}
+
+
+.ui {position: relative;}
+.myswiper{position: relative;overflow: hidden;}
+.ui .swiper-container>.swiper-wrapper{margin-left:13px;padding-top: 25px;padding-bottom: 40px;}
+.ui .swiper-container>.swiper-wrapper>.swiper-slide
+	{width:25%;}
+.ui .iphone{position: absolute;top:-23px;left:15px;}
+.s_b_p4{position: absolute;top: 50%;margin-top: -5px;left:0;}
+.s_b_n4{position: absolute;top: 50%;margin-top: -5px;right: 0;}
+
+/*part4*/
+.part4 .cloud {
+	background: url(../images/cloud.png);
+    width: 800px;
+    height: 306px;
+    position: absolute;
+    left: 0;
+    top: 10%;
+    animation: cloud 6s linear infinite alternate;
+    z-index: 7;
+}
+.part4 .ipad {
+	position: relative;
+	margin: 0 auto;
+    background: url(../images/xianshi.png) no-repeat top center;
+    width:80%;
+    height: 547px;
+    background-size:contain;
+    border-radius: 20px;
+    box-shadow: 0 0 180px rgba(0, 0, 0, 0.9)
+}
+.part4 .my_introduction{
+	position: absolute;
+	width: 100%;
+	top:20px;
+	left: 0;
+	padding-left: 10%;
+	padding-right: 10%;
+	color: #e0e0e0;
+}
+.part4 .my_introduction .p01{font-size: 24px;letter-spacing: 5px;}
+.part4 .my_introduction .p02{font-size: 20px;letter-spacing: 4px;}
+.part4 .my_introduction .p03{font-size: 14px;text-indent: 2em;line-height: 21px;}
+
+
+.part5 .piano{
+	width:700px;
+	height: 140px;
+	margin: 40px auto;
+	overflow: hidden;
+}
+.part5 .piano li{
+	float: left;
+	width:78px;height: 138px;
+	border: 1px solid #fff;position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.part5 .piano li a{
+	position: absolute;
+	width: 100%;
+	height:140px;
+}
+.part5 .piano li div{
+	position: absolute;width:100%;height:140px;
+	bottom: -140px;background: pink; 
+}
+.part5 .little_star img{width: 761px;height: 290px;}
+
+@keyframes yinfu {   
+	 0%{bottom:-140px;}
+	 50%{bottom:0;}
+	 100%{bottom:-140px;} 
+}
+
+
+
+@keyframes cloud {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(740px);
+    }
+}
+
+/*音乐图标*/
+.music{
+	position: fixed;
+	z-index: 7;
+	background: url(../images/music.png);
+	right:5px;
+	top:24%;
+	background-size:contain;
+	width: 40px;height: 40px;
+	cursor: pointer;
+	/*添加动画*/
+	animation: music 4s linear infinite;
+    transition: all 1s;
+}
+.music.play{
+	position: fixed;
+	z-index: 7;
+	background: url(../images/music.png);
+	right:5px;
+	top:24%;
+	background-size:contain;
+	width: 40px;height: 40px;
+	cursor: pointer;
+	/*添加动画*/
+	animation: music 4s linear infinite;
+    transition: all 1s;
+}
+.music.pause{
+	position: fixed;
+	z-index: 7;
+	background: url(../images/music_c.png);
+	right:5px;
+	top:24%;
+	background-size:contain;
+	width: 40px;height: 40px;
+	cursor: pointer;
+	/*添加动画*/
+	animation: music 4s linear infinite;
+    transition: all 1s;
+}
+@keyframes music {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+/*指示器*/
+.part_indicator{
+	list-style: none;
+	position: fixed;
+	right: 20px;
+	top:50%;
+	margin-top: -100px;
+	width: 20px;height: 200px;
+}
+.part_indicator li{
+	width: 10px;
+	height: 10px;
+	border-radius:10px;
+	border:2px solid orange;
+	margin-bottom: 10px;
+}
+.part_indicator:last-child{margin-bottom: 0;}
+.part_indicator li.current{background-color: orange;}
+
+
+/*媒体查询*/
+/* 超小屏幕（手机，小于 768px） */
+/* 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？） */
+
+@media screen and (min-width: 360px) and (max-width : 768px) {
+	.ui .swiper-container>.swiper-wrapper>.swiper-slide{width:50%;}
+	.part4 .ipad{
+		width:80%;
+		height:620px;
+		background: url(../images/xianshi_2.png) no-repeat top center;
+		background-size: contain;
+	}
+	.part4 .my_introduction{padding-top: 20px;}
+	.part4 .my_introduction .p01{font-size: 30px;letter-spacing: 5px;}
+	.part4 .my_introduction .p02{font-size: 20px;letter-spacing: 4px;}
+	.part4 .my_introduction .p03{font-size: 16px;text-indent: 2em;line-height: 24px;}
+	.part5 .piano{
+		width:350px;
+		height: 140px;
+		margin: 40px auto;
+		overflow: hidden;
+	}
+	.part5 .piano li{
+		float: left;
+		width:38px;height: 138px;
+		border: 1px solid #fff;position: relative;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+}
+/* 小屏幕（平板，大于等于 768px） */
+@media screen and (min-width: 768px) and (max-width: 992px){ 
+	.ui .iphone{position: absolute;top:-11px;left:18px;}
+	.part4 .my_introduction{padding-top: 40px;}
+	.part4 .my_introduction .p01{font-size: 36px;letter-spacing: 5px;}
+	.part4 .my_introduction .p02{font-size: 26px;letter-spacing: 4px;}
+	.part4 .my_introduction .p03{font-size: 20px;text-indent: 2em;line-height: 30px;}
+}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: @screen-md-min) { ... }
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media screen and (min-width: 993px) { 
+	.part4 .ipad{
+		width:80%;
+		height:620px;
+		background: url(../images/xianshi_3.png) no-repeat top center;
+		background-size: contain;
+	}
+	.part4 .my_introduction{top: 40px;}
+	.part4 .my_introduction .p01{font-size: 36px;letter-spacing: 5px;}
+	.part4 .my_introduction .p02{font-size: 26px;letter-spacing: 4px;}
+	.part4 .my_introduction .p03{font-size: 20px;text-indent: 2em;line-height: 30px;}
+
+ }
+
+

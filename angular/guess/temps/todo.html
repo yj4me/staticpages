@@ -1,0 +1,23 @@
+<div>
+	<ul class="taskList">
+		<li ng-repeat="task in taskList | filter:{done:'未完成'}" ng-model="myList">
+			<div class="checkbox">
+			   <!--  <label>
+			      	<input type="checkbox" ng-model="task.done"> 
+			      	<span>{{task.text}}</span>
+			    </label> -->
+			    <span class="badge">{{task.id}}</span>
+			     &nbsp;&nbsp;&nbsp;
+			    <span>{{task.text}}</span>
+			    &nbsp;&nbsp;&nbsp;
+			    <span >{{task.done}}</span>
+			    &nbsp;&nbsp;&nbsp;
+			    <span>{{task.time}}</span>
+			    <button type="button" class="close" ng-click="removeTask(task)" data-dismiss="alert">×</button>
+			</div>
+		</li>
+	</ul>
+	<!-- 检查 -->
+	<div ng-show="check()">没有代办事项，赶快去添加任务吧^_^</div>
+</div>
+

@@ -1,0 +1,73 @@
+body{background:url(../images/world.jpg);width: 100%;height: 100%;background-size: cover;}
+.box{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    margin: 100px 50%;
+}
+.box .circle{
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.box .circle:nth-child(1){
+    width: 400px;
+    height: 400px;
+    border:1px dashed ;
+} 
+.box .circle:nth-child(2){
+    width: 300px;
+    height: 300px;
+    border:1px dashed #2b233a;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+} 
+.box .circle:nth-child(3){
+    width: 200px;
+    height: 200px;
+    background-color:#bf4133;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    line-height: 200px;
+   font-size: 15px;
+   text-align: center;
+}
+.box ul{
+    list-style: none;
+}
+.box ul li{
+    position: absolute;
+    border-radius: 50%;
+}
+.box ul li:nth-child(1){
+    width: 80px;
+    height: 80px;
+    background-color: #bf4133;         
+    line-height: 80px;
+    text-align: center;
+}
+.box ul li:nth-child(2){
+    width: 80px;
+    height:80px;
+    line-height: 80px;
+    background-color:#f7cba8 ;         
+    text-align: center;
+}
+.box ul li:nth-child(3){
+    width: 80px;
+    height: 80px;
+    background-color: #f7cba8;         
+    line-height: 80px;
+    text-align: center;
+}
+.box ul li:nth-child(4){
+    width: 60px;
+    height: 60px;
+    background-color: #2b233a;         
+    line-height: 60px;
+    text-align: center;
+}
